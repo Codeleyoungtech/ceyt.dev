@@ -1,0 +1,25 @@
+---
+title: "Building Flustro with a local-first constraint"
+date: "2026-07-10"
+excerpt: "How local-first architecture changed product, UX, and model decisions in Flustro."
+tags: ["flustro", "rust", "tauri", "voice"]
+---
+
+Cloud voice tooling is convenient, but it is also fragile when your network is not predictable.
+
+For Flustro, I committed to a local-first architecture early. That decision forced tradeoffs in model packaging, startup time, and desktop UX, but it removed a larger class of reliability problems.
+
+## Why local-first
+
+The core value was simple: if I open the app, dictation should work now, not after a round-trip to a region I do not control.
+
+## What changed in implementation
+
+- Rust + Tauri stayed as the desktop shell for predictable native performance.
+- A Python sidecar handles transcription model execution.
+- Product decisions started from latency and reliability, not feature count.
+
+## Current state
+
+Flustro is still evolving, but local-first remains non-negotiable in the roadmap.
+

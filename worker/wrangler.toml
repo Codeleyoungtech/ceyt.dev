@@ -1,0 +1,17 @@
+name = "ceyt-contact-api"
+main = "src/index.ts"
+compatibility_date = "2026-07-24"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[vars]
+# Optional. Set to your site origin to tighten CORS. Leave unset to allow all origins.
+# CONTACT_ALLOWED_ORIGIN = "https://ceyt.dev"
+
+[[d1_databases]]
+binding = "CONTACT_DB"
+database_name = "ceyt-contact"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"

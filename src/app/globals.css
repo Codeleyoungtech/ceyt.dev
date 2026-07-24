@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+:root {
+  --bg-base: #0d0f14;
+  --bg-raised: #151822;
+  --text-primary: #f1f3f7;
+  --text-muted: #8b92a6;
+  --accent-indigo: #6e5bff;
+  --accent-amber: #ffb454;
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
+  --ring: color-mix(in oklab, var(--accent-indigo) 70%, white 30%);
+  --border-soft: color-mix(in oklab, var(--text-muted) 20%, transparent);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent-indigo) 70%, transparent);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration-color: color-mix(in oklab, var(--accent-indigo) 60%, transparent);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--accent-indigo);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.editor-panel {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--bg-raised) 92%, white 8%) 0%,
+    var(--bg-raised) 100%
+  );
+  border: 1px solid var(--border-soft);
+}
+
+.prompt {
+  color: var(--accent-indigo);
+  font-family: var(--font-jetbrains), monospace;
+}
+
+.token-amber {
+  color: var(--accent-amber);
+}
+
+.token-indigo {
+  color: var(--accent-indigo);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(139, 146, 166, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 146, 166, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.prose-ceyt h2,
+.prose-ceyt h3 {
+  font-family: var(--font-jetbrains), monospace;
+  color: var(--text-primary);
+  margin-top: 2rem;
+}
+
+.prose-ceyt p,
+.prose-ceyt li {
+  color: color-mix(in oklab, var(--text-primary) 90%, var(--text-muted) 10%);
+  line-height: 1.7;
+}
+
+.prose-ceyt code {
+  font-family: var(--font-jetbrains), monospace;
+  color: var(--accent-amber);
+  background: color-mix(in oklab, var(--bg-raised) 85%, black 15%);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.35rem;
+}
+
+.prose-ceyt pre {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow-x: auto;
+}

@@ -1,0 +1,22 @@
+---
+title: "What I learned shipping public Zeyt releases"
+date: "2026-07-03"
+excerpt: "Release process notes from building an open-source terminal emulator in public."
+tags: ["zeyt", "oss", "rust", "ci-cd"]
+---
+
+Zeyt gets better fastest when releases are regular and feedback loops stay short.
+
+I treat release automation as product work, not just maintenance work.
+
+## Core release loop
+
+1. Ship a focused change.
+2. Cut a release via CI/CD.
+3. Collect issue feedback from real usage.
+4. Tighten the next release around concrete pain points.
+
+## Why this matters
+
+A terminal emulator earns trust through consistency over time. Public releases make that consistency visible.
+

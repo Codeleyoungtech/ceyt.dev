@@ -1,0 +1,19 @@
+---
+title: "Swyp and content throughput for build-in-public"
+date: "2026-06-24"
+excerpt: "Why I built Swyp to automate carousel generation for my own publishing workflow."
+tags: ["swyp", "cloudflare-workers", "automation"]
+---
+
+Publishing consistently is mostly a systems problem.
+
+Swyp exists because manually generating carousels was too slow and too easy to defer.
+
+## Stack fit
+
+Cloudflare Workers + Hono + Satori/resvg made sense because this stack already powers other projects I run. I wanted one backend pattern, not fragmented tooling.
+
+## Practical result
+
+The engine is in-house, fast to iterate, and directly tied to how I ship content.
+
