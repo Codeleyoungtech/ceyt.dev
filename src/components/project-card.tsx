@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/lib/site-data";
@@ -23,8 +24,16 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
       </div>
       <p className="mt-4 text-sm text-[var(--text-muted)]">{project.summary}</p>
       {!compact ? (
-        <div className="mt-4 rounded-lg border border-dashed border-[var(--border-soft)] p-3 text-xs text-[var(--text-muted)]">
-          {project.screenshotPlaceholder}
+        <div className="mt-4">
+          {project.image ? (
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-[var(--border-soft)]">
+              <Image src={project.image} alt={`${project.name} screenshot`} fill className="object-cover" />
+            </div>
+          ) : (
+            <div className="rounded-lg border border-dashed border-[var(--border-soft)] p-3 text-xs text-[var(--text-muted)]">
+              {project.screenshotPlaceholder}
+            </div>
+          )}
         </div>
       ) : null}
       <ul className="mt-4 flex flex-wrap gap-2">

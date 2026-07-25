@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
-import type { ContactState } from "@/app/contact/actions";
+import type { ContactState } from "@/app/contact/types";
 
 type ContactFormProps = {
   action: (_prevState: ContactState, formData: FormData) => Promise<ContactState>;

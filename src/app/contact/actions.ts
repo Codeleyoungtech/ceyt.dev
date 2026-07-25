@@ -1,11 +1,6 @@
 "use server";
 
-type ContactState = {
-  ok: boolean;
-  message: string;
-};
-
-export type { ContactState };
+import type { ContactState } from "./types";
 
 function resolveContactEndpoint(rawEndpoint: string): string {
   const trimmed = rawEndpoint.trim();

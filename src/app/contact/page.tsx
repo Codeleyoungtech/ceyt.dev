@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 import { PromptLine } from "@/components/prompt-line";
 import { profile } from "@/lib/site-data";
 import { submitContact } from "./actions";
-import type { ContactState } from "./actions";
+import type { ContactState } from "./types";
 
 const initialState: ContactState = { ok: false, message: "" };
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { PromptLine } from "@/components/prompt-line";
 import { profile } from "@/lib/site-data";
@@ -15,6 +16,11 @@ export default function AboutPage() {
     <div className="space-y-6 pb-12">
       <PromptLine>whoami --long</PromptLine>
       <h1 className="font-mono text-4xl text-[var(--text-primary)]">About Eleazar</h1>
+      
+      <section className="mb-8 overflow-hidden rounded-xl border border-[var(--border-soft)] w-48 h-48 relative">
+        <Image src="/images/headshot.jpg" alt="Eleazar Ogoyemi" fill className="object-cover" />
+      </section>
+
       <p className="max-w-3xl text-[var(--text-muted)]">{profile.bio}</p>
       <p className="max-w-3xl text-[var(--text-muted)]">
         He builds under two distinct identities: CEYT for developer-focused products and engineering work, and Eleyoungtech for consumer-facing content and gadget reviews.
@@ -25,12 +31,6 @@ export default function AboutPage() {
       <p className="max-w-3xl text-[var(--text-muted)]">
         Education: University of Ibadan, CS distance-learning track, expected 2028.
       </p>
-      <section className="editor-panel rounded-xl border-dashed p-5">
-        <h2 className="font-mono text-xl text-[var(--text-primary)]">Photo / Avatar</h2>
-        <p className="mt-2 text-sm text-[var(--text-muted)]">
-          [PLACEHOLDER: Add real headshot or commissioned illustrated avatar. No stock imagery.]
-        </p>
-      </section>
     </div>
   );
 }

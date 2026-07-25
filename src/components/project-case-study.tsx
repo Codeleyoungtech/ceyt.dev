@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PromptLine } from "@/components/prompt-line";
 import type { Project } from "@/lib/site-data";
@@ -44,10 +45,16 @@ export function ProjectCaseStudy({ project, templateLabel }: ProjectCaseStudyPro
         </ul>
       </section>
 
-      <section className="editor-panel rounded-xl border-dashed p-5">
-        <h2 className="font-mono text-xl text-[var(--text-primary)]">Media</h2>
-        <p className="mt-3 text-sm text-[var(--text-muted)]">{project.screenshotPlaceholder}</p>
-      </section>
+      {project.image ? (
+        <section className="relative aspect-video w-full overflow-hidden rounded-xl border border-[var(--border-soft)]">
+          <Image src={project.image} alt={`${project.name} media`} fill className="object-cover" />
+        </section>
+      ) : (
+        <section className="editor-panel rounded-xl border-dashed p-5">
+          <h2 className="font-mono text-xl text-[var(--text-primary)]">Media</h2>
+          <p className="mt-3 text-sm text-[var(--text-muted)]">{project.screenshotPlaceholder}</p>
+        </section>
+      )}
 
       <section className="flex flex-wrap gap-3">
         {project.links.live ? (

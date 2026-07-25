@@ -20,6 +20,7 @@ export type Project = {
     metrics: string[];
   };
   screenshotPlaceholder: string;
+  image?: string;
 };
 
 export const profile = {
@@ -61,6 +62,7 @@ export const projects: Project[] = [
     },
     screenshotPlaceholder:
       "[PLACEHOLDER: Add real Flustro screenshots or a short screen recording from production use.]",
+    image: "/projects/flustro.png",
   },
   {
     slug: "zeyt",
@@ -90,6 +92,7 @@ export const projects: Project[] = [
     },
     screenshotPlaceholder:
       "[PLACEHOLDER: Add real Zeyt screenshots and terminal-in-use sequence.]",
+    image: "/projects/zeyt.png",
   },
   {
     slug: "swyp",
@@ -114,6 +117,7 @@ export const projects: Project[] = [
     },
     screenshotPlaceholder:
       "[PLACEHOLDER: Add real Swyp output examples from live usage.]",
+    image: "/projects/swyp.png",
   },
   {
     slug: "desplio",
